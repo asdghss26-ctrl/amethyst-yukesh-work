@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { stats } from '@/lib/data/about'
 import { Stat } from '@/types'
+import Image from 'next/image'
 
 function useCountUp(target: string, isVisible: boolean) {
   const [display, setDisplay] = useState('0')
@@ -64,7 +65,7 @@ export default function StatsSection() {
   return (
     <section className="py-16 px-6 md:px-12 lg:px-20" style={{ background: '#F7F3EF' }}>
       <div ref={sectionRef} className="relative rounded-2xl overflow-hidden" style={{ minHeight: '400px' }}>
-        <img src="/images/clinic/clinic corridor.JPG" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <Image src="/images/clinic/clinic corridor.JPG" alt="" fill className="object-cover" />
         <div className="absolute inset-0" style={{ background: '#5A2A5D', opacity: 0.75 }} />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(42,15,45,0.7) 100%)' }} />
         <div className="absolute bottom-0 left-0 right-0 px-8 md:px-16 py-12">

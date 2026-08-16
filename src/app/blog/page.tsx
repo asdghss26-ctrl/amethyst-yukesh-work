@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { blogPosts } from "@/lib/data/blog";
 
 export const metadata = {
@@ -23,17 +24,18 @@ export default function BlogPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {blogPosts.map((post, i) => (
+          {blogPosts.map((post) => (
             <Link
               key={post.id}
               href={`/blog/${post.id}`}
               className="group bg-white border border-[#E4DFE8] rounded-[32px] overflow-hidden hover:shadow-lg hover:border-[#8E5C8F] transition-all duration-300"
             >
-              <div className="w-full h-48 overflow-hidden">
-                <img
+              <div className="w-full h-48 overflow-hidden relative">
+                <Image
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  fill
+                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">

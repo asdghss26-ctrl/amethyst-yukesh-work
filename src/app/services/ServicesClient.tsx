@@ -2,13 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { treatments, Treatment } from "@/lib/data/treatments";
 import { Reveal } from "@/components/ui/RevealAnimation";
-import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 interface ServicesClientProps {
   initialCategory?: string;
@@ -100,7 +98,7 @@ export default function ServicesClient({ initialCategory }: ServicesClientProps)
       {/* ─── CATEGORY TABS ─── */}
       <section className="max-w-5xl mx-auto px-6 mb-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 pb-6 border-b border-[#E4DFE8]">
-          {CATEGORIES.map((cat, idx) => {
+          {CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat.id;
             return (
               <button

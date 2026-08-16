@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect, MouseEvent, TouchEvent } from "react";
+import Image from "next/image";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -68,10 +69,11 @@ export default function BeforeAfterSlider({
       onTouchStart={() => setIsDragging(true)}
     >
       {/* After Image (Background) */}
-      <img
+      <Image
         src={afterImage}
         alt="After treatment"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        fill
+        className="object-cover pointer-events-none"
       />
       <div className="absolute right-4 top-4 bg-[#5A2A5D] text-white text-[10px] font-semibold uppercase tracking-[0.1em] px-3 py-1 rounded-full z-10 opacity-90 backdrop-blur-sm">
         {afterLabel}
@@ -82,10 +84,11 @@ export default function BeforeAfterSlider({
         className="absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <img
+        <Image
           src={beforeImage}
           alt="Before treatment"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          fill
+          className="object-cover pointer-events-none"
         />
         <div className="absolute left-4 top-4 bg-white text-[#2E2E2E] border border-[#E4DFE8] text-[10px] font-semibold uppercase tracking-[0.1em] px-3 py-1 rounded-full z-10 opacity-90 backdrop-blur-sm">
           {beforeLabel}

@@ -3,7 +3,7 @@ import DoctorBioSection from '@/components/sections/about/DoctorBioSection'
 import StatsSection from '@/components/sections/about/StatsSection'
 import ValuesSection from '@/components/sections/about/ValuesSection'
 import GalleryGridSection from '@/components/sections/about/GalleryGridSection'
-import AboutCTASection from '@/components/sections/about/AboutCTASection'
+
 
 export const metadata = {
   title: 'About Dr. Shruthi Pavana Janardhanan | Amethyst Skin Clinic',

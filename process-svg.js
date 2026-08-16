@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
 
 const svgPath = 'c:\\Users\\acer\\OneDrive - ELCOT\\Documents\\AntiGravity\\logo without color.svg';
 let svg = fs.readFileSync(svgPath, 'utf8');
 
 // The dark colors that represent the actual logo lines
-const darkColors = ['#500', '#505', '#555', '#805580', 'gray']; // added gray just in case, but maybe we shouldn't. Wait, the line colors are likely #500, #505, #555, #805580.
+// removed darkColors variable as it is never used
 
 // Let's replace the colors in the SVG.
 // But we need to HIDE the light colors entirely (make them transparent or remove them)

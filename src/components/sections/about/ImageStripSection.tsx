@@ -1,4 +1,5 @@
 import { Reveal } from "../../ui/RevealAnimation";
+import Image from "next/image";
 
 const images = [
   { src: '/images/clinic/clinic entrance.jpg', alt: 'Amethyst Skin Clinic entrance' },
@@ -17,10 +18,11 @@ export default function ImageStripSection() {
             className="group relative overflow-hidden rounded-[16px] mb-2"
             style={{ height: 300, boxShadow: "0 8px 24px rgba(91,31,106,0.12)" }}
           >
-            <img
+            <Image
               src={images[0].src}
               alt={images[0].alt}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
         </Reveal>
@@ -33,10 +35,11 @@ export default function ImageStripSection() {
                 className="group relative overflow-hidden rounded-[12px]"
                 style={{ height: 180, boxShadow: "0 8px 24px rgba(91,31,106,0.12)" }}
               >
-                <img
+                <Image
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </Reveal>
